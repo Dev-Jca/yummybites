@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:yummybites/home/food_page_body.dart';
+import 'package:yummybites/utils/dimensions.dart';
+import 'package:yummybites/widgets/big_text.dart';
+import 'package:yummybites/widgets/small_text.dart';
 
-import '../colors.dart';
+import '../utils/colors.dart';
 
 class MainFoodPage extends StatefulWidget {
   const MainFoodPage({Key? key}) : super(key: key);
@@ -12,42 +17,68 @@ class MainFoodPage extends StatefulWidget {
 class _MainFoodPageState extends State<MainFoodPage> {
   @override
   Widget build(BuildContext context) {
+    print(MediaQuery.of(context).size.width.toString());
     return Scaffold(
       body: Column(
         children: [
           Container(
-              child: Container(
-            margin: EdgeInsets.only(
-              top: 45,
-              bottom: 15,
-            ),
-            padding: EdgeInsets.only(
-              left: 20,
-              right: 20,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: [
-                    const Text('Country'),
-                    const Text('City'),
-                  ],
-                ),
-                Center(
-                  child: Container(
-                    width: 45,
-                    height: 45,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: AppColors.mainColor,
-                    ),
-                    child: const Icon(Icons.search, color: Colors.white),
+            child: Container(
+              margin: EdgeInsets.only(
+                top: Dimensions.height45,
+                bottom: Dimensions.height15,
+              ),
+              padding: EdgeInsets.only(
+                left: Dimensions.width20,
+                right: Dimensions.width20,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    children: [
+                      BigText(
+                        text: 'Nigeria',
+                        color: AppColors.mainColor,
+                      ),
+                      Row(
+                        children: [
+                          SmallText(
+                            text: 'Lagos',
+                            color: Colors.black54,
+                          ),
+                          Icon(
+                            Icons.arrow_drop_down_rounded,
+                            size: Dimensions.iconSize24,
+                          )
+                        ],
+                      )
+                    ],
                   ),
-                )
-              ],
+                  Center(
+                    child: Container(
+                      width: Dimensions.width45,
+                      height: Dimensions.height45,
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius15),
+                        color: AppColors.mainColor,
+                      ),
+                      child: Icon(
+                        Icons.search,
+                        color: Colors.white,
+                        size: Dimensions.iconSize24,
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
-          )),
+          ),
+          const Expanded(
+            child: SingleChildScrollView(
+              child: FoodPageBody(),
+            ),
+          ),
         ],
       ),
     );
