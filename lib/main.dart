@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'app_theme.dart';
-import 'home.dart';
+import 'deprecated/app_theme.dart';
+import 'deprecated/home.dart';
+import 'home/main_food_page.dart';
 
 void main() {
-  final theme = AppTheme.dark();
+  final theme = AppTheme.light();
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: theme,
-      home: const Home(),
+      home: const MainFoodPage(),
     ),
   );
 }
