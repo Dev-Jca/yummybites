@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:yummybites/home/food_page_body.dart';
+import 'package:yummybites/pages/home/food_page_body.dart';
 import 'package:yummybites/utils/dimensions.dart';
 import 'package:yummybites/widgets/big_text.dart';
 import 'package:yummybites/widgets/small_text.dart';
-
-import '../utils/colors.dart';
+import 'package:yummybites/utils/colors.dart';
 
 class MainFoodPage extends StatefulWidget {
   const MainFoodPage({Key? key}) : super(key: key);
