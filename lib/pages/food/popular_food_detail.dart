@@ -1,11 +1,10 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:yummybites/utils/colors.dart';
 import 'package:yummybites/utils/dimensions.dart';
 import 'package:yummybites/widgets/app_column.dart';
 import 'package:yummybites/widgets/app_icon.dart';
 import 'package:yummybites/widgets/big_text.dart';
+import 'package:yummybites/widgets/expandable_text_widget.dart';
 import 'package:yummybites/widgets/icon_and_text_widget.dart';
 import 'package:yummybites/widgets/small_text.dart';
 
@@ -75,11 +74,23 @@ class PopularFoodDetail extends StatelessWidget {
                     height: Dimensions.height20,
                   ),
                   BigText(text: 'Introduce'),
+                  SizedBox(
+                    height: Dimensions.height20,
+                  ),
+
+                  //expandable text widget
+
+                  const Expanded(
+                    child: SingleChildScrollView(
+                      child: ExpandableTextWidget(
+                          text:
+                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"),
+                    ),
+                  )
                 ],
               ),
             ),
           ),
-          //expandable text widget
         ],
       ),
       bottomNavigationBar: Container(
@@ -146,6 +157,7 @@ class PopularFoodDetail extends StatelessWidget {
               ),
               child: BigText(
                 text: '\$10 | Add to cart',
+                color: Colors.white,
               ),
             ),
           ],
